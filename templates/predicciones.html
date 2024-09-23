@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predicciones de SIM Cards Vendidas</title>
+
+    <!-- Link a Bootstrap y Plotly -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="my-4 text-center">Predicciones de SIM Cards Vendidas</h1>
+
+        <!-- Gráfico de predicciones -->
+        <div id="graphDiv" style="width: 100%; height: 500px;"></div>
+
+        <!-- Tabla de datos -->
+        <h2 class="my-4">Datos Históricos</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Punto de Venta</th>
+                    <th>Mes</th>
+                    <th>SIM Cards Vendidas</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for fila in datos %}
+                <tr>
+                    <td>{{ fila[0] }}</td>
+                    <td>{{ fila[1] }}</td>
+                    <td>{{ fila[2] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <h2 class="my-4">Predicción del Próximo Mes</h2>
+        <p>La predicción de SIM cards vendidas en el próximo mes es: {{ prediccion }}.</p>
+    </div>
+
+    <!-- Script para cargar el gráfico -->
+    <script>
+        var graphData = {{ graph_json|tojson }};
+        Plotly.newPlot('graphDiv', graphData.data, graphData.layout);
+    </script>
+</body>
+</html>
+

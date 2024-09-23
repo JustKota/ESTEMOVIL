@@ -1,0 +1,29 @@
+{% extends "core/base.html" %}
+
+{% block title %}Fecha de Reactivacion {% endblock %}
+
+{% block body %}
+<table id="myTable" class="display">
+    <thead>
+        <tr>
+            <th scope="col">Número</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Hora</th>
+            <th>Cedula Punto de Venta</th>
+            <th>ID Punto de Venta</th>
+            <th>Nombre Punto de Venta</th>
+            <th>Estado de reactivacion</th>
+            <th>Fecha de Vencimiento</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for fila in datos %}
+        <tr>
+            {% for columna in fila %}
+                <td>{{ columna }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock%}

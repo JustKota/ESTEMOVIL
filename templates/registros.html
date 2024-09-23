@@ -1,0 +1,25 @@
+{% extends "core/base.html" %}
+
+{% block title %}Lineas Registradas {% endblock %}
+
+{% block body %}
+<table id="myTable" class="display">
+    <thead>
+        <tr>
+            <th scope="col">CC Punto de venta</th>
+            <th scope="col">ID Punto de venta</th>
+            <th>Nombre Punto de venta</th>
+            <th>Total lineas registradas</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for fila in datos %}
+        <tr>
+            {% for columna in fila %}
+                <td>{{ columna }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock%}

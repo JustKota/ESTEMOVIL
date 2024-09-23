@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RECARGAS A LINEAS</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #4a4a4a;
+            text-align: center;
+        }
+        .table-container {
+            overflow-x: auto;
+            margin: 20px auto;
+            width: 100%;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            min-width: 1500px; /* Ajusta este valor según el ancho de tus columnas */
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            border: 1px solid #8b96f7ce;
+            padding: 8px;
+            text-align: center;
+            font-size: 14px;
+        }
+        th {
+            background-color: #ddd9f3;
+            color: #4a4a4a;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="text-center mt-5 mb-5 text-primary">RECARGAS SEPTIEMBRE</h1>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Posicion</th>
+                    <th>Periodo</th>
+                    <th>OrderID</th>
+                    <th>Linea</th>
+                    <th>Tipo de Transaccion</th>
+                    <th>Canal</th>
+                    <th>Tipo de Linea</th>
+                    <th>Unidad en Negocio</th>
+                    <th>Codigo POS</th>
+                    <th>Nombre de Plan</th>
+                    <th>Cedula</th>
+                    <th>Nombre de Asesor</th>
+                    <th>Regional</th>
+                    <th>Aliado</th>
+                    <th>Fecha Activacion</th>
+                    <th>Fecha Portacion</th>
+                    <th>Fecha GROSS</th>
+                    <th>Aplicabilidad</th>
+                    <th>Codigo SUBPOS</th>
+                    <th>Tipo de Evento</th>
+                    <th>Origen</th>
+                    <th>Usuario Actual</th>
+                    <th>Usuario Pasado</th>
+                    <th>Paquete</th>
+                    <th>ID PDV</th>
+                    <th>Fecha de Evento</th>
+                    <th>Fecha de primer Evento</th>
+                    <th>MSISDN Temporal</th>
+                    <th>Valor</th>
+                    <th>Impuestos</th>
+                    <th>Mes 0</th>
+                    <th>Mes 1</th>
+                    <th>Mes 2</th>
+                    <th>Mes 3</th>
+                    <th>Mes de Salida</th>
+                    <th>Fecha de Linea Temporal</th>
+                    <th>Fecha de Linea Temporal Actual</th>
+                    <th>Fecha de Linea Temporal Pasada</th>
+                    <th>Distribuidores</th>
+                    <th>Sucursal Aliado</th>
+                    <th>Dato de Usuario</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for fila in datos %}
+                <tr>
+                    {% for columna in fila %}
+                        <td>{{ columna }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
