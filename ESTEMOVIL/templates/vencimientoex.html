@@ -1,0 +1,35 @@
+{% extends "core/base.html" %}
+
+{% block title %}Fechas de vencimiento {% endblock %}
+
+{% block body %}
+<table id="myTable" class="display">
+    <thead>
+        <tr>
+            <th scope="col">Operador</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Hora</th>
+            <th>Número</th>
+            <th>Valor</th>
+            <th>Ganancia</th>
+            <th>Incentivo</th>
+            <th>Referencia</th>
+            <th>Dispositivo</th>
+            <th>Saldo Inicial</th>
+            <th>Saldo Final</th>
+            <th>Tipo de Saldo</th>
+            <th>PIN</th>
+            <th>IP</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for fila in datos %}
+        <tr>
+            {% for columna in fila %}
+                <td>{{ columna }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock%}

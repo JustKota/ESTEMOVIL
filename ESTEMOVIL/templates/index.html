@@ -1,0 +1,64 @@
+{% extends "core/base.html" %}
+
+{% block title %}Recargas en Linea {% endblock %}
+
+{% block body %}
+<div class="container w-5 pt-5">
+    <table id="myTable">
+        <thead>
+            <tr>
+                <th>Posición</th>
+                <th>Periodo</th>
+                <th>OrderID</th>
+                <th>Línea</th>
+                <th>Tipo de Transacción</th>
+                <th>Canal</th>
+                <th>Tipo de Línea</th>
+                <th>Unidad en Negocio</th>
+                <th>Código POS</th>
+                <th>Nombre de Plan</th>
+                <th>Cédula</th>
+                <th>Nombre de Asesor</th>
+                <th>Regional</th>
+                <th>Aliado</th>
+                <th>Fecha Activación</th>
+                <th>Fecha Portación</th>
+                <th>Fecha GROSS</th>
+                <th>Aplicabilidad</th>
+                <th>Código SUBPOS</th>
+                <th>Tipo de Evento</th>
+                <th>Origen</th>
+                <th>Usuario Actual</th>
+                <th>Usuario Pasado</th>
+                <th>Paquete</th>
+                <th>ID PDV</th>
+                <th>Fecha de Evento</th>
+                <th>Fecha de Primer Evento</th>
+                <th>MSISDN Temporal</th>
+                <th>Valor</th>
+                <th>Impuestos</th>
+                <th>Mes 0</th>
+                <th>Mes 1</th>
+                <th>Mes 2</th>
+                <th>Mes 3</th>
+                <th>Mes de Salida</th>
+                <th>Fecha de Línea Temporal</th>
+                <th>Fecha de Línea Temporal Actual</th>
+                <th>Fecha de Línea Temporal Pasada</th>
+                <th>Distribuidores</th>
+                <th>Sucursal Aliado</th>
+                <th>Dato de Usuario</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for fila in datos %}
+            <tr>
+                {% for columna in fila %}
+                    <td>{{ columna }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

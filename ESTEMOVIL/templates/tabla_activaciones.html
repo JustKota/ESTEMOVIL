@@ -1,0 +1,33 @@
+{% extends "core/base.html" %}
+
+{% block title %}ACTIVACIONES ESTEMOVIL{% endblock %}
+
+{% block body %}
+<table id="myTable" class="display">
+    <thead>
+        <tr>
+            <th>Número ICCID</th>
+            <th>CC PDV</th>
+            <th>MSISDN</th>
+            <th>Día de Activación</th>
+            <th>ID PDV</th>
+            <th>Nombre PDV</th>
+            <th>ICCID</th>
+            <th>Estado</th>
+            <th>Resultado Operación</th>
+            <th>Vence</th>
+            <th>Vencimiento Extendido</th>
+            <th>Notas</th>
+            </tr>
+    </thead>
+    <tbody>
+        {% for fila in datos %}
+        <tr>
+            {% for columna in fila %}
+                <td>{{ columna }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

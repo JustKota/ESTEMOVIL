@@ -1,0 +1,26 @@
+{% extends "core/base.html" %}
+
+{% block title %}Paquete de Reactivacion {% endblock %}
+
+{% block body %}
+<table id="myTable" class="display">
+    <thead>
+        <tr>
+            <th scope="col">0000</th>
+            <th scope="col">Fecha</th>
+            <th>Número</th>
+            <th>Valor</th>
+            <th>Paquete</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for fila in datos %}
+        <tr>
+            {% for columna in fila %}
+                <td>{{ columna }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock%}
